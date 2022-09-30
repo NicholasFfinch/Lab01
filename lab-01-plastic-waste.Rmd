@@ -1,6 +1,6 @@
 ---
 title: "Lab 01 - Plastic waste"
-author: "INSERT NAME HERE"
+author: "Nicholas Ffinch"
 date: "`r Sys.Date()`"
 output: html_document
 ---
@@ -17,23 +17,46 @@ library(tidyverse)
 plastic_waste <- read_csv("data/plastic-waste.csv")
 ```
 
+
 ### Exercise 1
 
-*Remove this text, and add your answer for Exercise 1 here.*
+ggplot(data = plastic_waste, aes(x = plastic_waste_per_cap)) +
+  geom_density()
+  
+ggplot(data = plastic_waste, 
+       mapping = aes(x = plastic_waste_per_cap, 
+                     color = continent)) +
+  geom_density()
+  
+ggplot(data = plastic_waste, 
+       mapping = aes(x = plastic_waste_per_cap, 
+                     color = continent, 
+                     fill = continent)) +
+  geom_density()
 
-```{r plastic-waste-continent}
-# remove this comment and add the code for Exercise 1 here
-```
+ggplot(data = plastic_waste, 
+       mapping = aes(x = plastic_waste_per_cap, 
+                     color = continent, 
+                     fill = continent)) +
+  geom_density(alpha = 0.7)
+
+
+{r plastic-waste-continent}
+
 
 ### Exercise 2
 
-```{r plastic-waste-density}
-# remove this comment and add the code for Exercise 2 here
-```
+#{r plastic-waste-density}
+ggplot(data = plastic_waste, 
+       mapping = aes(x = plastic_waste_per_cap, 
+                     color = continent, 
+                     fill = continent)) +
+  geom_density(alpha = 0.1)
+
 
 ### Exercise 3
 
-*Remove this text, and add your answer for Exercise 3 here.*
+*The color and fill gives the color to the sketches and fills the area of the density and plastic waste per capita for each country according to its corresponding colour *
 
 ### Exercise 4
 
